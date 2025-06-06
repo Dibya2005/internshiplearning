@@ -1,6 +1,3 @@
-
-
-
 op=input("eneter a opetrator (+ - * /)")
 num1=float(input("enter the 1st num"))
 num2=float(input("enter the 2nd num"))
