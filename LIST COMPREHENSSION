@@ -1,0 +1,21 @@
+#list comprehension is a concise way to create lists in python
+#compact and easier to read than traditional for loops
+#expression for each item in the iterable if condition (formula)
+doubles=[]
+for x in range(10):
+  doubles.append(x*2)
+print(doubles)
+#using list comprehension
+#doubles=[expression for value in iterable if condition]
+doubles=[x*2 for x in range(10)]
+print(doubles)
+triples=[x*3 for x in range(10)]
+print(triples)
+fruits=["apple","banana","orange","grape"]
+fruits=[fruit for fruit in fruits if "a" in fruit]
+print(fruits)
+firstchar=[c[0] for c in fruits]
+print(firstchar)
+numbers=[1,2,3,-4,-5]
+positive=[n for n in numbers if n>0]
+print(positive) # check codition is optionally
