@@ -1,0 +1,4 @@
+how to choose the best model for your ml problem
+and how to do hyper perameter tuning
+lets consider irisn flower data set where based on petal sepal lenght and width we want to predict which flower it is
+1st problem is that what kind of perameter i should use leets if i selsct svm problem arises what kind of value of perameter i should use the optimal perameter is called hyper tuning 
