@@ -1,0 +1,58 @@
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Hugging Face cache and tokens
+.cache/
+*.token
+hf_token.txt
+token.txt
+.huggingface/
+
+# Model weight files (large binary files — download via script)
+models/downloaded_model/
+models/transformer_classifier_dataset_1/
+models/transformer_classifier_dataset_2/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Raw and processed datasets (regenerate via script)
+data/raw/
+data/processed_dataset_1/
+data/processed_dataset_2/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets and environment variables
+.env
+*.env
+secrets.txt
+credentials.txt
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.log

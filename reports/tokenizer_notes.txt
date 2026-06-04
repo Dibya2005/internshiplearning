@@ -1,0 +1,153 @@
+TASK 2 — TOKENIZER NOTES
+=============================================================================
+
+This file explains the key concepts encountered while working with Hugging Face
+tokenizers across BERT-style and GPT-style models.
+
+-----------------------------------------------------------------------------
+1. TOKENS
+-----------------------------------------------------------------------------
+A token is the smallest unit of text that a language model processes. It is NOT
+always the same as a word. Tokenizers break raw text into tokens using rules
+learned from large corpora.
+
+Examples of how a word can become multiple tokens:
+  - "running"   → ["run", "##ning"]   (BERT WordPiece)
+  - "tokenizer" → ["token", "izer"]   (GPT-2 BPE)
+  - "AI"        → ["ai"]              (BERT lowercases first)
+
+Why tokens instead of words?
+  - Words have infinite variations (misspellings, rare forms, new words).
+  - Subword tokenization handles unknown words by splitting them into known parts.
+  - A fixed vocabulary can cover almost any text.
+
+-----------------------------------------------------------------------------
+2. TOKEN IDs
+-----------------------------------------------------------------------------
+Every token maps to a unique integer ID in the model's vocabulary.
+
+Example (bert-base-uncased):
+  Token: "[CLS]"  →  ID: 101
+  Token: "hello"  →  ID: 7592
+  Token: "[SEP]"  →  ID: 102
+
+The model never sees raw text. It only sees sequences of these integer IDs.
+The embedding layer converts each ID into a high-dimensional vector before
+processing begins.
+
+-----------------------------------------------------------------------------
+3. ATTENTION MASK
+-----------------------------------------------------------------------------
+The attention mask is a list of 1s and 0s with the same length as the token IDs.
+
+  1 → real token, the model should attend to this position
+  0 → padding token, the model should ignore this position
+
+Example:
+  Input IDs  : [101, 7592, 2088, 102,    0,    0]
+  Attn Mask  : [  1,    1,    1,   1,    0,    0]
+
+Without the attention mask, the model would try to compute attention over
+padding tokens too, which would corrupt the representation.
+
+Note: GPT-2 does not use an attention mask by default in the same way because
+it is a causal (left-to-right) model and is not used for classification with
+padding in the standard setup.
+
+-----------------------------------------------------------------------------
+4. PADDING
+-----------------------------------------------------------------------------
+Neural networks process inputs in batches. All sequences in a batch must have
+the same length. Padding adds special [PAD] tokens (ID = 0 for BERT) to shorter
+sequences until they match the length of the longest sequence in the batch.
+
+  padding="max_length"  →  pads every sequence to a fixed maximum length
+  padding=True          →  pads to the longest sequence in the current batch
+
+Padding tokens are always masked out using the attention mask so the model
+does not treat them as real content.
+
+-----------------------------------------------------------------------------
+5. TRUNCATION
+-----------------------------------------------------------------------------
+If a sentence is longer than the model's maximum sequence length, it must be
+shortened. Truncation cuts the token sequence at the specified limit.
+
+  truncation=True       →  truncates to the model's default max length
+  max_length=128        →  truncates at 128 tokens specifically
+
+BERT-style models have a hard limit of 512 tokens (due to positional embeddings).
+GPT-2 has a context window of 1024 tokens.
+
+When truncation is applied, information beyond the cutoff is lost entirely.
+This is a known limitation of fixed-length transformer models.
+
+-----------------------------------------------------------------------------
+6. MAXIMUM SEQUENCE LENGTH
+-----------------------------------------------------------------------------
+Each model has a maximum number of tokens it can accept in one forward pass.
+This is called the maximum sequence length or context window.
+
+  bert-base-uncased        →  512 tokens
+  distilbert-base-uncased  →  512 tokens
+  gpt2                     →  1024 tokens
+
+For fine-tuning, a smaller max_length (e.g., 128 or 256) is often used to
+save memory and speed up training, especially on shorter texts like reviews.
+
+-----------------------------------------------------------------------------
+7. SPECIAL TOKENS
+-----------------------------------------------------------------------------
+Special tokens are reserved tokens added by the tokenizer automatically.
+
+BERT-style tokenizers add:
+  [CLS] (ID 101) — placed at the start of every input sequence.
+                   Its final hidden state is used as the sequence representation
+                   for classification tasks.
+  [SEP] (ID 102) — placed at the end of each sentence, or between two sentences
+                   in tasks like question answering or NLI.
+  [PAD] (ID 0)   — used to fill shorter sequences to a fixed length.
+  [UNK] (ID 100) — used when a character or subword cannot be found in vocabulary.
+  [MASK] (ID 103)— used during masked language modeling pretraining.
+
+GPT-2 has no CLS or SEP tokens by default. It was designed for generation,
+not classification. When used for classification, the end-of-sequence token
+<|endoftext|> (ID 50256) is often assigned as the padding token.
+
+-----------------------------------------------------------------------------
+8. OBSERVED DIFFERENCES: BERT-STYLE vs GPT-STYLE TOKENIZERS
+-----------------------------------------------------------------------------
+BERT uses WordPiece tokenization:
+  - Converts all text to lowercase (for -uncased variants).
+  - Splits unknown or rare words into subwords marked with "##" prefix.
+  - Example: "unbelievable" → ["un", "##believ", "##able"]
+  - Adds [CLS] at the start and [SEP] at the end automatically.
+
+GPT-2 uses Byte Pair Encoding (BPE):
+  - Case-sensitive (preserves original casing).
+  - Encodes spaces as part of the token (using "Ġ" prefix for leading spaces).
+  - Example: "running fast" → ["running", "Ġfast"]
+  - No special classification tokens added by default.
+
+Key observation:
+  - BERT typically produces more tokens per sentence because of its subword
+    splitting strategy and the addition of [CLS] and [SEP].
+  - GPT-2 often produces fewer tokens for common English words because BPE
+    merges frequently co-occurring byte pairs.
+  - For the same 10-sentence set, BERT-style models produced slightly higher
+    average token counts compared to GPT-2.
+
+-----------------------------------------------------------------------------
+9. WHY TOKENIZER CHOICE MATTERS
+-----------------------------------------------------------------------------
+The tokenizer is tied to the model. You cannot mix tokenizers.
+  - Always use the tokenizer that matches the model name exactly.
+  - Using the wrong tokenizer produces token IDs that do not match the model's
+    learned vocabulary, leading to nonsensical outputs.
+
+When preparing datasets for fine-tuning, the tokenizer should always be
+loaded from the same pretrained checkpoint as the model.
+
+=============================================================================
+End of tokenizer_notes.txt
+=============================================================================
