@@ -1,40 +1,68 @@
-Environment Setup
-1. Create a Virtual Environment
+# Internship - Hugging Face Text Classification
+
+## Project Objective
+
+This project focuses on learning and implementing Hugging Face Transformers for text classification. It includes tokenization analysis, dataset preprocessing, classical machine learning baselines, transformer fine-tuning, evaluation, and error analysis.
+
+---
+
+## Environment Setup
+
+### 1. Create a Virtual Environment
+
+```bash
 python -m venv .venv
-2. Activate the Virtual Environment
+```
 
-Windows:
+### 2. Activate the Virtual Environment
 
+**Windows**
+
+```bash
 .venv\Scripts\activate
+```
 
-Linux / macOS:
+**Linux / macOS**
 
+```bash
 source .venv/bin/activate
-Install Dependencies
+```
 
-Install all required packages:
+### 3. Install Dependencies
 
+Using requirements file:
+
+```bash
 pip install -r requirements.txt
+```
 
 Or install manually:
 
+```bash
 pip install torch transformers datasets evaluate accelerate huggingface_hub scikit-learn pandas numpy matplotlib notebook sentence-transformers
-Hugging Face Authentication
+```
+
+---
+
+## Hugging Face Authentication
 
 Create a Read/Write Access Token from your Hugging Face account.
 
-Login from the terminal:
+Login using:
 
+```bash
 huggingface-cli login
+```
 
-Paste your token when prompted.
+Paste the token when prompted.
 
+> Never store access tokens in source code, notebooks, README files, or Git commits.
 
 ---
 
 ## Repository Structure
 
-```
+```text
 internship-hf-text-classification/
 ├── README.md
 ├── requirements.txt
@@ -64,25 +92,41 @@ internship-hf-text-classification/
 │   ├── transformer_classifier_dataset_1/
 │   └── transformer_classifier_dataset_2/
 ├── results/
-│   ├── tokenization_examples.txt
-│   ├── dataset_summary.csv
-│   ├── classical_baseline_results.csv
-│   ├── transformer_classifier_results.json
-│   ├── model_comparison_results.csv
-│   ├── custom_prediction_examples.csv
 │   ├── confusion_matrices/
 │   └── error_analysis/
 └── reports/
-    ├── tokenizer_notes.txt
-    ├── model_file_notes.txt
-    ├── model_weight_formats.txt
-    ├── dataset_exploration_notes.txt
-    ├── preprocessing_notes.txt
-    ├── classical_baseline_report.txt
-    ├── transformer_training_report.txt
-    ├── baseline_vs_transformer_comparison.txt
-    ├── error_analysis_report.txt
-    └── final_report.txt
+```
 
-- All scripts use relative paths and run from the project root.
-- Every experiment saves its output to `results/` and every model to `models/`.
+---
+
+## Running Scripts
+
+Run scripts from the project root directory.
+
+```bash
+python src/load_tokenizer.py
+python src/download_model.py
+python src/run_text_generation.py
+python src/run_classification_pipeline.py
+python src/load_datasets_demo.py
+python src/preprocess_dataset.py
+python src/train_classical_baselines.py
+python src/train_transformer_classifier.py
+python src/evaluate_transformer_classifier.py
+python src/predict_with_finetuned_model.py
+python src/train_sentence_embedding_classifier.py
+python src/train_causal_lm_classifier_optional.py
+```
+
+---
+
+## Output Organization
+
+* `data/` → Raw and processed datasets
+* `src/` → Source code
+* `notebooks/` → Analysis notebooks
+* `models/` → Downloaded and trained models
+* `results/` → Evaluation metrics, predictions, and analysis outputs
+* `reports/` → Documentation and reports
+
+All experiments save outputs to `results/` and trained models to `models/`.
