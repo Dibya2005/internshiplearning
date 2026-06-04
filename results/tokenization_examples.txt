@@ -1,0 +1,174 @@
+================================================================================
+Sentence 1
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+I love learning Natural Language Processing.
+
+Tokens:
+['[CLS]', 'i', 'love', 'learning', 'natural', 'language', 'processing', '.', '[SEP]']
+
+Token IDs:
+[101, 1045, 2293, 4083, 3019, 2653, 6364, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+9
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+I love learning Natural Language Processing.
+
+Tokens:
+['[CLS]', 'i', 'love', 'learning', 'natural', 'language', 'processing', '.', '[SEP]']
+
+Token IDs:
+[101, 1045, 2293, 4083, 3019, 2653, 6364, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+9
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+I love learning Natural Language Processing.
+
+Tokens:
+['I', 'Ġlove', 'Ġlearning', 'ĠNatural', 'ĠLanguage', 'ĠProcessing', '.']
+
+Token IDs:
+[40, 1842, 4673, 12068, 15417, 28403, 13]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+7
+--------------------------------------------------------------------------------
+
+================================================================================
+Sentence 2
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+Transformers have revolutionized NLP.
+
+Tokens:
+['[CLS]', 'transformers', 'have', 'revolution', '##ized', 'nl', '##p', '.', '[SEP]']
+
+Token IDs:
+[101, 19081, 2031, 4329, 3550, 17953, 2361, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+9
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+Transformers have revolutionized NLP.
+
+Tokens:
+['[CLS]', 'transformers', 'have', 'revolution', '##ized', 'nl', '##p', '.', '[SEP]']
+
+Token IDs:
+[101, 19081, 2031, 4329, 3550, 17953, 2361, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+9
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+Transformers have revolutionized NLP.
+
+Tokens:
+['Transform', 'ers', 'Ġhave', 'Ġrevolution', 'ized', 'ĠN', 'LP', '.']
+
+Token IDs:
+[41762, 364, 423, 5854, 1143, 399, 19930, 13]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+8
+--------------------------------------------------------------------------------
+
+
+TOKENIZER COMPARISON
+
+================================================================================
+Sentence: I love learning Natural Language Processing.
+================================================================================
+
+bert-base-uncased Tokens:
+['i', 'love', 'learning', 'natural', 'language', 'processing', '.']
+
+distilbert-base-uncased Tokens:
+['i', 'love', 'learning', 'natural', 'language', 'processing', '.']
+
+gpt2 Tokens:
+['I', 'Ġlove', 'Ġlearning', 'ĠNatural', 'ĠLanguage', 'ĠProcessing', '.']
+
+================================================================================
+Sentence: Transformers have revolutionized NLP.
+================================================================================
+
+bert-base-uncased Tokens:
+['transformers', 'have', 'revolution', '##ized', 'nl', '##p', '.']
+
+distilbert-base-uncased Tokens:
+['transformers', 'have', 'revolution', '##ized', 'nl', '##p', '.']
+
+gpt2 Tokens:
+['Transform', 'ers', 'Ġhave', 'Ġrevolution', 'ized', 'ĠN', 'LP', '.']
+
+================================================================================
+Original Sentence:
+I love NLP.
+
+Tokens:
+['[CLS]', 'i', 'love', 'nl', '##p', '.', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+
+Token IDs:
+[101, 1045, 2293, 17953, 2361, 1012, 102, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Final Sequence Length:
+15
+
+================================================================================
+Original Sentence:
+
+Transformers have revolutionized natural language processing by enabling
+models to understand context better and achieve state-of-the-art performance
+across many different NLP tasks and applications.
+
+
+Tokens:
+['[CLS]', 'transformers', 'have', 'revolution', '##ized', 'natural', 'language', 'processing', 'by', 'enabling', 'models', 'to', 'understand', 'context', '[SEP]']
+
+Token IDs:
+[101, 19081, 2031, 4329, 3550, 3019, 2653, 6364, 2011, 12067, 4275, 2000, 3305, 6123, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Final Sequence Length:
+15
