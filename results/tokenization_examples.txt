@@ -172,3 +172,9 @@ Attention Mask:
 
 Final Sequence Length:
 15
+PADDING AND TRUNCATION OBSERVATIONS
+
+1. Padding adds [PAD] tokens to shorter sequences so that all inputs have the same length.
+2. Attention mask values are 0 for padding tokens and 1 for real tokens.
+3. Truncation removes tokens that exceed the specified maximum sequence length.
+4. Using max_length=15 ensured that both short and long sentences produced sequences of the same length.
