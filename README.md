@@ -1,4 +1,4 @@
-# Internship - Hugging Face Text Classification
+#  Hugging Face Text Classification
 
 ## Project Objective
 
