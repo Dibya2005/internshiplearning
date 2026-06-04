@@ -1,8 +1,7 @@
 from transformers import AutoTokenizer
 import os
 
-# Create output directory
-os.makedirs("results", exist_ok=True)
+
 
 # Load tokenizers
 tokenizers = {
@@ -15,8 +14,17 @@ tokenizers = {
 tokenizers["gpt2"].pad_token = tokenizers["gpt2"].eos_token
 
 sentences = [
+    
     "I love learning Natural Language Processing.",
-    "Transformers have revolutionized NLP."
+    "Transformers have revolutionized NLP.",
+    "The new smartphone costs $999.99, but it's on sale for 20% off!",
+    "Wait... WHAT?! I didn't know that huggingface-cli was installed.",
+    "Hello world.",
+    "Despite the heavy rain and strong winds, the dedicated team of researchers continued their expedition in the Amazon rainforest.",
+    "Let's test some special characters: @user, #NLP, and email@domain.com.",
+    "Uncharacteristically, the antidisestablishmentarianism movement grew rapidly.",
+    "It's important to understand why they're leaving, isn't it?",
+    "Version 2.0 of the software was released on 2023-10-25 at 8:30 AM."
 ]
 
 # Original sentence, tokens, token IDs, attention mask, total token count

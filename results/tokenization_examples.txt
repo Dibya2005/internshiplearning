@@ -108,6 +108,446 @@ Total Token Count:
 8
 --------------------------------------------------------------------------------
 
+================================================================================
+Sentence 3
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+The new smartphone costs $999.99, but it's on sale for 20% off!
+
+Tokens:
+['[CLS]', 'the', 'new', 'smartphone', 'costs', '$', '999', '.', '99', ',', 'but', 'it', "'", 's', 'on', 'sale', 'for', '20', '%', 'off', '!', '[SEP]']
+
+Token IDs:
+[101, 1996, 2047, 26381, 5366, 1002, 25897, 1012, 5585, 1010, 2021, 2009, 1005, 1055, 2006, 5096, 2005, 2322, 1003, 2125, 999, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+22
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+The new smartphone costs $999.99, but it's on sale for 20% off!
+
+Tokens:
+['[CLS]', 'the', 'new', 'smartphone', 'costs', '$', '999', '.', '99', ',', 'but', 'it', "'", 's', 'on', 'sale', 'for', '20', '%', 'off', '!', '[SEP]']
+
+Token IDs:
+[101, 1996, 2047, 26381, 5366, 1002, 25897, 1012, 5585, 1010, 2021, 2009, 1005, 1055, 2006, 5096, 2005, 2322, 1003, 2125, 999, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+22
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+The new smartphone costs $999.99, but it's on sale for 20% off!
+
+Tokens:
+['The', 'Ġnew', 'Ġsmartphone', 'Ġcosts', 'Ġ$', '999', '.', '99', ',', 'Ġbut', 'Ġit', "'s", 'Ġon', 'Ġsale', 'Ġfor', 'Ġ20', '%', 'Ġoff', '!']
+
+Token IDs:
+[464, 649, 11745, 3484, 720, 17032, 13, 2079, 11, 475, 340, 338, 319, 5466, 329, 1160, 4, 572, 0]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+19
+--------------------------------------------------------------------------------
+
+================================================================================
+Sentence 4
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+Wait... WHAT?! I didn't know that huggingface-cli was installed.
+
+Tokens:
+['[CLS]', 'wait', '.', '.', '.', 'what', '?', '!', 'i', 'didn', "'", 't', 'know', 'that', 'hugging', '##face', '-', 'cl', '##i', 'was', 'installed', '.', '[SEP]']
+
+Token IDs:
+[101, 3524, 1012, 1012, 1012, 2054, 1029, 999, 1045, 2134, 1005, 1056, 2113, 2008, 17662, 12172, 1011, 18856, 2072, 2001, 5361, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+23
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+Wait... WHAT?! I didn't know that huggingface-cli was installed.
+
+Tokens:
+['[CLS]', 'wait', '.', '.', '.', 'what', '?', '!', 'i', 'didn', "'", 't', 'know', 'that', 'hugging', '##face', '-', 'cl', '##i', 'was', 'installed', '.', '[SEP]']
+
+Token IDs:
+[101, 3524, 1012, 1012, 1012, 2054, 1029, 999, 1045, 2134, 1005, 1056, 2113, 2008, 17662, 12172, 1011, 18856, 2072, 2001, 5361, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+23
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+Wait... WHAT?! I didn't know that huggingface-cli was installed.
+
+Tokens:
+['Wait', '...', 'ĠWHAT', '?!', 'ĠI', 'Ġdidn', "'t", 'Ġknow', 'Ġthat', 'Ġhugging', 'face', '-', 'cli', 'Ġwas', 'Ġinstalled', '.']
+
+Token IDs:
+[21321, 986, 25003, 12248, 314, 1422, 470, 760, 326, 46292, 2550, 12, 44506, 373, 6589, 13]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+16
+--------------------------------------------------------------------------------
+
+================================================================================
+Sentence 5
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+Hello world.
+
+Tokens:
+['[CLS]', 'hello', 'world', '.', '[SEP]']
+
+Token IDs:
+[101, 7592, 2088, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1]
+
+Total Token Count:
+5
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+Hello world.
+
+Tokens:
+['[CLS]', 'hello', 'world', '.', '[SEP]']
+
+Token IDs:
+[101, 7592, 2088, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1]
+
+Total Token Count:
+5
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+Hello world.
+
+Tokens:
+['Hello', 'Ġworld', '.']
+
+Token IDs:
+[15496, 995, 13]
+
+Attention Mask:
+[1, 1, 1]
+
+Total Token Count:
+3
+--------------------------------------------------------------------------------
+
+================================================================================
+Sentence 6
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+Despite the heavy rain and strong winds, the dedicated team of researchers continued their expedition in the Amazon rainforest.
+
+Tokens:
+['[CLS]', 'despite', 'the', 'heavy', 'rain', 'and', 'strong', 'winds', ',', 'the', 'dedicated', 'team', 'of', 'researchers', 'continued', 'their', 'expedition', 'in', 'the', 'amazon', 'rainforest', '.', '[SEP]']
+
+Token IDs:
+[101, 2750, 1996, 3082, 4542, 1998, 2844, 7266, 1010, 1996, 4056, 2136, 1997, 6950, 2506, 2037, 5590, 1999, 1996, 9733, 18951, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+23
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+Despite the heavy rain and strong winds, the dedicated team of researchers continued their expedition in the Amazon rainforest.
+
+Tokens:
+['[CLS]', 'despite', 'the', 'heavy', 'rain', 'and', 'strong', 'winds', ',', 'the', 'dedicated', 'team', 'of', 'researchers', 'continued', 'their', 'expedition', 'in', 'the', 'amazon', 'rainforest', '.', '[SEP]']
+
+Token IDs:
+[101, 2750, 1996, 3082, 4542, 1998, 2844, 7266, 1010, 1996, 4056, 2136, 1997, 6950, 2506, 2037, 5590, 1999, 1996, 9733, 18951, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+23
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+Despite the heavy rain and strong winds, the dedicated team of researchers continued their expedition in the Amazon rainforest.
+
+Tokens:
+['Despite', 'Ġthe', 'Ġheavy', 'Ġrain', 'Ġand', 'Ġstrong', 'Ġwinds', ',', 'Ġthe', 'Ġdedicated', 'Ġteam', 'Ġof', 'Ġresearchers', 'Ġcontinued', 'Ġtheir', 'Ġexpedition', 'Ġin', 'Ġthe', 'ĠAmazon', 'Ġrain', 'forest', '.']
+
+Token IDs:
+[8332, 262, 4334, 6290, 290, 1913, 13520, 11, 262, 7256, 1074, 286, 4837, 3767, 511, 22817, 287, 262, 6186, 6290, 29623, 13]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+22
+--------------------------------------------------------------------------------
+
+================================================================================
+Sentence 7
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+Let's test some special characters: @user, #NLP, and email@domain.com.
+
+Tokens:
+['[CLS]', 'let', "'", 's', 'test', 'some', 'special', 'characters', ':', '@', 'user', ',', '#', 'nl', '##p', ',', 'and', 'email', '@', 'domain', '.', 'com', '.', '[SEP]']
+
+Token IDs:
+[101, 2292, 1005, 1055, 3231, 2070, 2569, 3494, 1024, 1030, 5310, 1010, 1001, 17953, 2361, 1010, 1998, 10373, 1030, 5884, 1012, 4012, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+24
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+Let's test some special characters: @user, #NLP, and email@domain.com.
+
+Tokens:
+['[CLS]', 'let', "'", 's', 'test', 'some', 'special', 'characters', ':', '@', 'user', ',', '#', 'nl', '##p', ',', 'and', 'email', '@', 'domain', '.', 'com', '.', '[SEP]']
+
+Token IDs:
+[101, 2292, 1005, 1055, 3231, 2070, 2569, 3494, 1024, 1030, 5310, 1010, 1001, 17953, 2361, 1010, 1998, 10373, 1030, 5884, 1012, 4012, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+24
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+Let's test some special characters: @user, #NLP, and email@domain.com.
+
+Tokens:
+['Let', "'s", 'Ġtest', 'Ġsome', 'Ġspecial', 'Ġcharacters', ':', 'Ġ@', 'user', ',', 'Ġ#', 'N', 'LP', ',', 'Ġand', 'Ġemail', '@', 'domain', '.', 'com', '.']
+
+Token IDs:
+[5756, 338, 1332, 617, 2041, 3435, 25, 2488, 7220, 11, 1303, 45, 19930, 11, 290, 3053, 31, 27830, 13, 785, 13]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+21
+--------------------------------------------------------------------------------
+
+================================================================================
+Sentence 8
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+Uncharacteristically, the antidisestablishmentarianism movement grew rapidly.
+
+Tokens:
+['[CLS]', 'un', '##cha', '##rac', '##ter', '##istic', '##ally', ',', 'the', 'anti', '##dis', '##est', '##ab', '##lish', '##ment', '##arian', '##ism', 'movement', 'grew', 'rapidly', '.', '[SEP]']
+
+Token IDs:
+[101, 4895, 7507, 22648, 3334, 6553, 3973, 1010, 1996, 3424, 10521, 4355, 7875, 13602, 3672, 12199, 2964, 2929, 3473, 5901, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+22
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+Uncharacteristically, the antidisestablishmentarianism movement grew rapidly.
+
+Tokens:
+['[CLS]', 'un', '##cha', '##rac', '##ter', '##istic', '##ally', ',', 'the', 'anti', '##dis', '##est', '##ab', '##lish', '##ment', '##arian', '##ism', 'movement', 'grew', 'rapidly', '.', '[SEP]']
+
+Token IDs:
+[101, 4895, 7507, 22648, 3334, 6553, 3973, 1010, 1996, 3424, 10521, 4355, 7875, 13602, 3672, 12199, 2964, 2929, 3473, 5901, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+22
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+Uncharacteristically, the antidisestablishmentarianism movement grew rapidly.
+
+Tokens:
+['Un', 'character', 'istically', ',', 'Ġthe', 'Ġant', 'idis', 'establishment', 'arian', 'ism', 'Ġmovement', 'Ġgrew', 'Ġrapidly', '.']
+
+Token IDs:
+[3118, 22769, 16772, 11, 262, 1885, 29207, 44390, 3699, 1042, 3356, 6348, 8902, 13]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+14
+--------------------------------------------------------------------------------
+
+================================================================================
+Sentence 9
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+It's important to understand why they're leaving, isn't it?
+
+Tokens:
+['[CLS]', 'it', "'", 's', 'important', 'to', 'understand', 'why', 'they', "'", 're', 'leaving', ',', 'isn', "'", 't', 'it', '?', '[SEP]']
+
+Token IDs:
+[101, 2009, 1005, 1055, 2590, 2000, 3305, 2339, 2027, 1005, 2128, 2975, 1010, 3475, 1005, 1056, 2009, 1029, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+19
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+It's important to understand why they're leaving, isn't it?
+
+Tokens:
+['[CLS]', 'it', "'", 's', 'important', 'to', 'understand', 'why', 'they', "'", 're', 'leaving', ',', 'isn', "'", 't', 'it', '?', '[SEP]']
+
+Token IDs:
+[101, 2009, 1005, 1055, 2590, 2000, 3305, 2339, 2027, 1005, 2128, 2975, 1010, 3475, 1005, 1056, 2009, 1029, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+19
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+It's important to understand why they're leaving, isn't it?
+
+Tokens:
+['It', "'s", 'Ġimportant', 'Ġto', 'Ġunderstand', 'Ġwhy', 'Ġthey', "'re", 'Ġleaving', ',', 'Ġisn', "'t", 'Ġit', '?']
+
+Token IDs:
+[1026, 338, 1593, 284, 1833, 1521, 484, 821, 4305, 11, 2125, 470, 340, 30]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+14
+--------------------------------------------------------------------------------
+
+================================================================================
+Sentence 10
+================================================================================
+
+Tokenizer: bert-base-uncased
+Original Sentence:
+Version 2.0 of the software was released on 2023-10-25 at 8:30 AM.
+
+Tokens:
+['[CLS]', 'version', '2', '.', '0', 'of', 'the', 'software', 'was', 'released', 'on', '202', '##3', '-', '10', '-', '25', 'at', '8', ':', '30', 'am', '.', '[SEP]']
+
+Token IDs:
+[101, 2544, 1016, 1012, 1014, 1997, 1996, 4007, 2001, 2207, 2006, 16798, 2509, 1011, 2184, 1011, 2423, 2012, 1022, 1024, 2382, 2572, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+24
+--------------------------------------------------------------------------------
+
+Tokenizer: distilbert-base-uncased
+Original Sentence:
+Version 2.0 of the software was released on 2023-10-25 at 8:30 AM.
+
+Tokens:
+['[CLS]', 'version', '2', '.', '0', 'of', 'the', 'software', 'was', 'released', 'on', '202', '##3', '-', '10', '-', '25', 'at', '8', ':', '30', 'am', '.', '[SEP]']
+
+Token IDs:
+[101, 2544, 1016, 1012, 1014, 1997, 1996, 4007, 2001, 2207, 2006, 16798, 2509, 1011, 2184, 1011, 2423, 2012, 1022, 1024, 2382, 2572, 1012, 102]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+24
+--------------------------------------------------------------------------------
+
+Tokenizer: gpt2
+Original Sentence:
+Version 2.0 of the software was released on 2023-10-25 at 8:30 AM.
+
+Tokens:
+['Version', 'Ġ2', '.', '0', 'Ġof', 'Ġthe', 'Ġsoftware', 'Ġwas', 'Ġreleased', 'Ġon', 'Ġ20', '23', '-', '10', '-', '25', 'Ġat', 'Ġ8', ':', '30', 'ĠAM', '.']
+
+Token IDs:
+[14815, 362, 13, 15, 286, 262, 3788, 373, 2716, 319, 1160, 1954, 12, 940, 12, 1495, 379, 807, 25, 1270, 3001, 13]
+
+Attention Mask:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Total Token Count:
+22
+--------------------------------------------------------------------------------
+
 
 TOKENIZER COMPARISON
 
@@ -136,6 +576,110 @@ distilbert-base-uncased Tokens:
 
 gpt2 Tokens:
 ['Transform', 'ers', 'Ġhave', 'Ġrevolution', 'ized', 'ĠN', 'LP', '.']
+
+================================================================================
+Sentence: The new smartphone costs $999.99, but it's on sale for 20% off!
+================================================================================
+
+bert-base-uncased Tokens:
+['the', 'new', 'smartphone', 'costs', '$', '999', '.', '99', ',', 'but', 'it', "'", 's', 'on', 'sale', 'for', '20', '%', 'off', '!']
+
+distilbert-base-uncased Tokens:
+['the', 'new', 'smartphone', 'costs', '$', '999', '.', '99', ',', 'but', 'it', "'", 's', 'on', 'sale', 'for', '20', '%', 'off', '!']
+
+gpt2 Tokens:
+['The', 'Ġnew', 'Ġsmartphone', 'Ġcosts', 'Ġ$', '999', '.', '99', ',', 'Ġbut', 'Ġit', "'s", 'Ġon', 'Ġsale', 'Ġfor', 'Ġ20', '%', 'Ġoff', '!']
+
+================================================================================
+Sentence: Wait... WHAT?! I didn't know that huggingface-cli was installed.
+================================================================================
+
+bert-base-uncased Tokens:
+['wait', '.', '.', '.', 'what', '?', '!', 'i', 'didn', "'", 't', 'know', 'that', 'hugging', '##face', '-', 'cl', '##i', 'was', 'installed', '.']
+
+distilbert-base-uncased Tokens:
+['wait', '.', '.', '.', 'what', '?', '!', 'i', 'didn', "'", 't', 'know', 'that', 'hugging', '##face', '-', 'cl', '##i', 'was', 'installed', '.']
+
+gpt2 Tokens:
+['Wait', '...', 'ĠWHAT', '?!', 'ĠI', 'Ġdidn', "'t", 'Ġknow', 'Ġthat', 'Ġhugging', 'face', '-', 'cli', 'Ġwas', 'Ġinstalled', '.']
+
+================================================================================
+Sentence: Hello world.
+================================================================================
+
+bert-base-uncased Tokens:
+['hello', 'world', '.']
+
+distilbert-base-uncased Tokens:
+['hello', 'world', '.']
+
+gpt2 Tokens:
+['Hello', 'Ġworld', '.']
+
+================================================================================
+Sentence: Despite the heavy rain and strong winds, the dedicated team of researchers continued their expedition in the Amazon rainforest.
+================================================================================
+
+bert-base-uncased Tokens:
+['despite', 'the', 'heavy', 'rain', 'and', 'strong', 'winds', ',', 'the', 'dedicated', 'team', 'of', 'researchers', 'continued', 'their', 'expedition', 'in', 'the', 'amazon', 'rainforest', '.']
+
+distilbert-base-uncased Tokens:
+['despite', 'the', 'heavy', 'rain', 'and', 'strong', 'winds', ',', 'the', 'dedicated', 'team', 'of', 'researchers', 'continued', 'their', 'expedition', 'in', 'the', 'amazon', 'rainforest', '.']
+
+gpt2 Tokens:
+['Despite', 'Ġthe', 'Ġheavy', 'Ġrain', 'Ġand', 'Ġstrong', 'Ġwinds', ',', 'Ġthe', 'Ġdedicated', 'Ġteam', 'Ġof', 'Ġresearchers', 'Ġcontinued', 'Ġtheir', 'Ġexpedition', 'Ġin', 'Ġthe', 'ĠAmazon', 'Ġrain', 'forest', '.']
+
+================================================================================
+Sentence: Let's test some special characters: @user, #NLP, and email@domain.com.
+================================================================================
+
+bert-base-uncased Tokens:
+['let', "'", 's', 'test', 'some', 'special', 'characters', ':', '@', 'user', ',', '#', 'nl', '##p', ',', 'and', 'email', '@', 'domain', '.', 'com', '.']
+
+distilbert-base-uncased Tokens:
+['let', "'", 's', 'test', 'some', 'special', 'characters', ':', '@', 'user', ',', '#', 'nl', '##p', ',', 'and', 'email', '@', 'domain', '.', 'com', '.']
+
+gpt2 Tokens:
+['Let', "'s", 'Ġtest', 'Ġsome', 'Ġspecial', 'Ġcharacters', ':', 'Ġ@', 'user', ',', 'Ġ#', 'N', 'LP', ',', 'Ġand', 'Ġemail', '@', 'domain', '.', 'com', '.']
+
+================================================================================
+Sentence: Uncharacteristically, the antidisestablishmentarianism movement grew rapidly.
+================================================================================
+
+bert-base-uncased Tokens:
+['un', '##cha', '##rac', '##ter', '##istic', '##ally', ',', 'the', 'anti', '##dis', '##est', '##ab', '##lish', '##ment', '##arian', '##ism', 'movement', 'grew', 'rapidly', '.']
+
+distilbert-base-uncased Tokens:
+['un', '##cha', '##rac', '##ter', '##istic', '##ally', ',', 'the', 'anti', '##dis', '##est', '##ab', '##lish', '##ment', '##arian', '##ism', 'movement', 'grew', 'rapidly', '.']
+
+gpt2 Tokens:
+['Un', 'character', 'istically', ',', 'Ġthe', 'Ġant', 'idis', 'establishment', 'arian', 'ism', 'Ġmovement', 'Ġgrew', 'Ġrapidly', '.']
+
+================================================================================
+Sentence: It's important to understand why they're leaving, isn't it?
+================================================================================
+
+bert-base-uncased Tokens:
+['it', "'", 's', 'important', 'to', 'understand', 'why', 'they', "'", 're', 'leaving', ',', 'isn', "'", 't', 'it', '?']
+
+distilbert-base-uncased Tokens:
+['it', "'", 's', 'important', 'to', 'understand', 'why', 'they', "'", 're', 'leaving', ',', 'isn', "'", 't', 'it', '?']
+
+gpt2 Tokens:
+['It', "'s", 'Ġimportant', 'Ġto', 'Ġunderstand', 'Ġwhy', 'Ġthey', "'re", 'Ġleaving', ',', 'Ġisn', "'t", 'Ġit', '?']
+
+================================================================================
+Sentence: Version 2.0 of the software was released on 2023-10-25 at 8:30 AM.
+================================================================================
+
+bert-base-uncased Tokens:
+['version', '2', '.', '0', 'of', 'the', 'software', 'was', 'released', 'on', '202', '##3', '-', '10', '-', '25', 'at', '8', ':', '30', 'am', '.']
+
+distilbert-base-uncased Tokens:
+['version', '2', '.', '0', 'of', 'the', 'software', 'was', 'released', 'on', '202', '##3', '-', '10', '-', '25', 'at', '8', ':', '30', 'am', '.']
+
+gpt2 Tokens:
+['Version', 'Ġ2', '.', '0', 'Ġof', 'Ġthe', 'Ġsoftware', 'Ġwas', 'Ġreleased', 'Ġon', 'Ġ20', '23', '-', '10', '-', '25', 'Ġat', 'Ġ8', ':', '30', 'ĠAM', '.']
 
 ================================================================================
 Original Sentence:
