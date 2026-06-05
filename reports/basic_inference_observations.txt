@@ -1,0 +1,110 @@
+TEXT GENERATION USING DISTILGPT2
+
+Model Used:
+
+distilgpt2
+
+Objective:
+
+To generate text continuations from a given input prompt using a pretrained causal language model.
+
+Prompts Tested:
+
+Artificial intelligence is
+Machine learning helps in
+A language model is
+
+Observations:
+
+The DistilGPT2 model successfully generated text for all provided prompts.
+The generated text was contextually related to the input prompt and attempted to continue the sentence in a meaningful way.
+Since text generation was performed using sampling (do_sample=True), the output varied across multiple executions even when the same prompt was used.
+Parameters such as temperature, top_k, and top_p influenced the creativity and diversity of the generated responses.
+Lower temperature values produced more focused and predictable text, while higher values resulted in more diverse outputs.
+The model was able to generate coherent short passages but occasionally produced repetitive or less meaningful content when generating longer sequences.
+DistilGPT2 is a compressed version of GPT-2, making it faster and less resource-intensive while still maintaining reasonable text generation quality.
+The generated output demonstrated the model's ability to learn language patterns from large-scale training data without requiring task-specific training.
+
+Inference Performance:
+
+Inference was completed quickly on both CPU and GPU.    
+GPU execution significantly reduced generation time compared to CPU execution.
+Memory consumption remained relatively low due to the lightweight nature of DistilGPT2.
+
+Limitations:
+
+Generated text is not always factually correct.
+The model may occasionally repeat phrases or lose context during longer generations.
+The quality of generated text depends heavily on the quality and clarity of the input prompt.
+TEXT CLASSIFICATION USING PRETRAINED SENTIMENT ANALYSIS PIPELINE
+
+Model Used:
+
+distilbert-base-uncased-finetuned-sst-2-english
+
+Objective:
+
+To classify the sentiment of input sentences using a pretrained sentiment analysis model.
+
+Test Dataset:
+
+10 manually created sentences containing positive, negative, and neutral meanings.
+
+Observations:
+
+Positive Sentences:
+
+Sentences expressing satisfaction, happiness, appreciation, or positive experiences were classified as POSITIVE.
+Examples such as "I love this product" and "The movie was fantastic" received very high confidence scores.
+The model showed strong performance in identifying clearly positive sentiment.
+
+Negative Sentences:
+
+Sentences expressing dissatisfaction, disappointment, or criticism were classified as NEGATIVE.
+Examples such as "I hate this application" and "The service was terrible" were correctly identified.
+Confidence scores were generally high for strongly negative statements.
+
+Neutral Sentences:
+
+The selected SST-2 model supports only two labels: POSITIVE and NEGATIVE.
+Therefore, truly neutral sentences were forced into one of the two available categories.
+This behavior demonstrates a limitation of binary sentiment classification models.
+A multiclass sentiment model would be more suitable when neutral sentiment detection is required.
+
+Confidence Scores:
+
+Most predictions had confidence scores greater than 0.95.
+Higher confidence scores indicate stronger certainty in the model's prediction.
+Ambiguous or neutral statements typically resulted in lower confidence scores.
+
+Inference Performance:
+
+Classification was completed almost instantly.
+The pipeline abstraction provided by Hugging Face simplified the inference process significantly.
+No additional preprocessing or feature engineering was required.
+
+Limitations:
+
+The model cannot explicitly identify neutral sentiment.
+Predictions may become less reliable for sarcastic, ambiguous, or domain-specific text.
+Performance depends on how closely the input data resembles the data used during training.
+COMPARISON OF THE TWO TASKS
+
+Text Generation:
+
+Produces new text based on an input prompt.
+Output is creative and probabilistic.
+Multiple executions can produce different results.
+
+Text Classification:
+
+Assigns predefined labels to existing text.
+Output is deterministic and focused on prediction accuracy.
+Multiple executions generally produce the same result for the same input.
+OVERALL CONCLUSION
+Hugging Face Transformers provides an easy-to-use framework for running pretrained NLP models.
+DistilGPT2 demonstrated the ability to generate coherent text continuations from short prompts.
+The sentiment analysis pipeline accurately classified positive and negative sentences with high confidence.
+GPU acceleration can significantly improve inference speed when CUDA-enabled PyTorch is available.
+Pretrained models enable rapid experimentation without requiring model training from scratch.
+These experiments demonstrate how transformer-based models can be applied to common NLP tasks such as text generation and sentiment analysis with only a few lines of code.

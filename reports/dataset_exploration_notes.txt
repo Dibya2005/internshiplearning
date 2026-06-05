@@ -1,1 +1,144 @@
 # Placeholder — to be completed in a future task.
+
+Dataset Loading Observation
+
+IMDB and TweetEval Sentiment datasets were successfully loaded and explored. Their available splits, column names, label names, and sample counts were printed.
+
+Attempts to load AG News, Yelp Polarity, and DBPedia resulted in a Hugging Face Hub URI compatibility error in the local environment:
+
+"Invalid HF URI ... Repository id must be 'namespace/name'"
+
+This issue appears to be related to package compatibility between the installed versions of the datasets and huggingface_hub libraries rather than the dataset loading code itself.
+DATASET EXPLORATION NOTES
+
+Task: Exploring Text Classification Datasets
+
+====================================================================
+1. DATASETS EXPLORED
+====================================================================
+
+1. IMDB
+   - Domain: Movie Reviews
+   - Task: Sentiment Classification
+   - Labels:
+        0 -> Negative
+        1 -> Positive
+
+2. TweetEval Sentiment
+   - Domain: Twitter / Social Media Posts
+   - Task: Sentiment Classification
+   - Labels:
+        0 -> Negative
+        1 -> Neutral
+        2 -> Positive
+
+3. Additional Dataset
+   - Attempts were made to load AG News, Yelp Polarity, and DBPedia.
+   - These datasets could not be loaded due to a Hugging Face Hub URI
+     compatibility issue in the local environment.
+   - The dataset exploration code remains compatible with these datasets
+     once the environment issue is resolved.
+
+====================================================================
+2. BINARY CLASSIFICATION DATASETS
+====================================================================
+
+IMDB is a binary classification dataset.
+
+Classes:
+- Negative
+- Positive
+
+The model must choose one of two possible sentiment labels.
+
+====================================================================
+3. MULTI-CLASS CLASSIFICATION DATASETS
+====================================================================
+
+TweetEval Sentiment is a multi-class classification dataset.
+
+Classes:
+- Negative
+- Neutral
+- Positive
+
+The model must distinguish between three sentiment categories,
+making the task more complex than binary classification.
+
+====================================================================
+4. DATASET WITH LONGER TEXT
+====================================================================
+
+IMDB contains significantly longer text samples.
+
+Observations:
+- Reviews often contain multiple paragraphs.
+- Reviews may contain hundreds or even thousands of words.
+- More context is available for sentiment prediction.
+
+TweetEval Sentiment contains shorter text samples.
+
+Observations:
+- Tweets are typically very short.
+- Less contextual information is available.
+- Informal language, abbreviations, and emojis may appear.
+
+Therefore, IMDB has longer text than TweetEval Sentiment.
+
+====================================================================
+5. WHICH DATASET APPEARS EASIER?
+====================================================================
+
+IMDB appears easier for sentiment classification because:
+
+- Reviews provide more context.
+- Positive and negative opinions are usually explicit.
+- Binary classification involves only two classes.
+
+Example:
+"This movie was amazing and I enjoyed every minute of it."
+
+The sentiment is easy to identify.
+
+====================================================================
+6. WHICH DATASET APPEARS HARDER?
+====================================================================
+
+TweetEval Sentiment appears harder because:
+
+- Tweets are short.
+- Context is limited.
+- Social media language is often informal.
+- Sarcasm and abbreviations are common.
+- The dataset contains three classes instead of two.
+
+Example:
+"Yeah, great job... 🙄"
+
+The actual sentiment may be negative even though the words appear positive.
+
+====================================================================
+7. CLASS DISTRIBUTION OBSERVATIONS
+====================================================================
+
+IMDB:
+- Balanced dataset.
+- Negative and positive classes contain similar numbers of samples.
+- Suitable for training sentiment classification models.
+
+TweetEval Sentiment:
+- Contains three sentiment categories.
+- Distribution is relatively balanced.
+- Useful for multi-class sentiment classification tasks.
+
+====================================================================
+8. CONCLUSION
+====================================================================
+
+- IMDB is a binary sentiment classification dataset.
+- TweetEval Sentiment is a multi-class sentiment classification dataset.
+- IMDB contains longer text samples.
+- TweetEval Sentiment is generally harder because of shorter text,
+  limited context, and the presence of three sentiment classes.
+- Both datasets are useful for learning and evaluating text
+  classification models using Hugging Face Transformers.

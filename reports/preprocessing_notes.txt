@@ -1,1 +1,106 @@
-# Placeholder — to be completed in a future task.
+
+
+PREPROCESSING NOTES
+
+1. Dataset Used
+
+Dataset Name: SetFit/enron_spam
+
+Task:
+Binary Text Classification (Spam Detection)
+
+The dataset contains email messages labeled as either spam or ham (non-spam).
+
+2. Text Column
+
+Text Column: text
+
+This column contains the email content that will be used as input to the model.
+
+Example:
+
+"Congratulations! You have won a free vacation."
+
+3. Label Column
+
+Label Column: label
+
+This column contains the target class for each email.
+
+
+4. Label Mapping
+
+Label 0 : Ham (Not Spam)
+Label 1 : Spam
+
+The model learns to predict whether an email is spam or not.
+
+
+5. Unnecessary Columns Removed
+
+The original dataset contained additional metadata columns:
+
+* message_id
+* subject
+* date
+
+These columns were removed because they are not required for text classification.
+
+Final columns retained:
+
+* text
+* label
+
+
+6. Tokenizer Used
+
+Tokenizer: distilbert-base-uncased
+
+Library:
+transformers.AutoTokenizer
+
+Purpose:
+Convert raw text into token IDs and attention masks that can be processed by the transformer model.
+
+7. Tokenization Settings
+
+Padding       : max_length
+Truncation    : True
+Maximum Length: 128
+
+Explanation:
+
+* Shorter sequences are padded to 128 tokens.
+* Longer sequences are truncated to 128 tokens.
+* This ensures that all inputs have the same length.
+8. Dataset Splits (Training , Testing , Validation splits)
+
+Train Samples: 28544
+Validation Samples: 3172
+Test Samples: 2000
+Validation data was created from the training split using:
+
+test_size = 0.1
+seed = 42
+
+9. Output Features After Tokenization
+
+Each example contains:
+
+* text
+* label
+* input_ids
+* attention_mask
+
+input_ids:
+Numerical representation of tokens.
+
+attention_mask:
+Indicates which tokens are real tokens (1) and which are padding tokens (0).
+
+10. Summary
+
+The Enron Spam dataset was cleaned by removing unnecessary metadata columns.
+ The text data was tokenized using the DistilBERT tokenizer with a maximum sequence length of 128 tokens.
+  A validation split was created from the training data, and the processed dataset was saved for 
+  future model training and evaluation.

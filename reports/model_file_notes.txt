@@ -1,1 +1,45 @@
 # Placeholder — to be completed in a future task.
+================================================================================
+REPORT: UNDERSTANDING LOCAL MODEL FILES
+================================================================================
+
+When downloading a Hugging Face model and tokenizer to a local directory 
+(using .save_pretrained()), several crucial files are generated. These files 
+can be grouped into two main categories: The Model (The Brain) and The 
+Tokenizer (The Translator).
+
+PART 1: THE MODEL (Architecture & Weights)
+
+1. config.json
+   - What it does: This is the architectural blueprint of the model.
+   - Details: It contains the hyperparameters that define the model's structure, 
+     such as the number of hidden layers, the number of attention heads, the 
+     vocabulary size, and the activation function used. The code needs this 
+     blueprint to build the empty neural network in memory before loading weights.
+
+2. model.safetensors (or pytorch_model.bin)
+   - What it does: This file contains the actual learned weights (the math).
+   - Details: Once the empty network is built using config.json, the millions 
+     (or billions) of parameters stored in this file are poured into that 
+     network. .safetensors is the modern, secure format that prevents malicious 
+     code execution and loads much faster than the older .bin format.
+
+3. generation_config.json (Common for Causal LMs like GPT-2)
+   - What it does: Controls how the model generates new text.
+   - Details: It holds default settings for text generation, such as max length, 
+     temperature (randomness), and top-k/top-p sampling parameters.
+
+PART 2: THE TOKENIZER (Text to Numbers)
+
+4. tokenizer_config.json
+   - What it does: Stores the high-level settings for the tokenizer.
+   - Details: It defines which special tokens are used (like [PAD], [CLS], 
+     or <|endoftext|>), truncation settings, and the specific tokenizer class 
+     to use in the code.
+
+5. tokenizer.json
+   - What it does: The complete dictionary and rulebook.
+   - Details: It contains the entire vocabulary mapping (which word/subword 
+     equals which ID number) and the underlying tokenization algorithm (like 
+     WordPiece or Byte-Pair Encoding). 
+

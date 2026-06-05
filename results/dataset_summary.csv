@@ -1,0 +1,6 @@
+dataset,class_name,count
+imdb,neg,12500
+imdb,pos,12500
+tweet_eval,positive,17849
+tweet_eval,neutral,20673
+tweet_eval,negative,7093
