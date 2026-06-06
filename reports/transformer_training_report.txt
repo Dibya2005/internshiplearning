@@ -1,1 +1,105 @@
 # Placeholder — to be completed in a future task.
+Transformer Training Report
+
+Project: Text Classification using Transformers
+
+1. Model Used
+
+* Model Name: prajjwal1/bert-tiny
+* Model Type: Lightweight BERT Encoder
+* Framework: Hugging Face Transformers
+* Reason for Selection: Chosen instead of DistilBERT to reduce training time and memory consumption while maintaining good classification performance.
+
+2. Dataset Used
+
+* Dataset Location: data/processed_dataset_1
+* Dataset Splits:
+
+  * Train Set: <train_samples>
+  * Validation Set: <validation_samples>
+  * Test Set: <test_samples>
+* Input Column: text
+* Label Column: label
+* Maximum Sequence Length: 128 tokens
+
+3. Hyperparameters
+
+* Epochs: 3
+* Batch Size: 16
+* Learning Rate: 2e-5
+* Maximum Sequence Length: 128
+* Evaluation Strategy: Epoch
+* Save Strategy: Epoch
+* Best Model Metric: F1 Score
+
+4. Training Process
+
+* Loaded the preprocessed dataset from disk.
+* Tokenized text data using AutoTokenizer.
+* Loaded the pretrained bert-tiny model using AutoModelForSequenceClassification.
+* Fine-tuned the model on the training dataset.
+* Evaluated the model after each epoch on the validation dataset.
+* Saved the best-performing checkpoint.
+
+5. Training Time
+
+* Total Training Time: <training_time>
+* Hardware Used: <CPU/GPU details>
+
+6. Evaluation Results
+
+Overall Metrics:
+
+* Accuracy: <accuracy>
+* Macro Precision: <macro_precision>
+* Macro Recall: <macro_recall>
+* Macro F1 Score: <macro_f1>
+* Weighted F1 Score: <weighted_f1>
+
+Per-Class Metrics:
+
+* Class 0:
+
+  * Precision: <value>
+  * Recall: <value>
+  * F1 Score: <value>
+
+* Class 1:
+
+  * Precision: <value>
+  * Recall: <value>
+  * F1 Score: <value>
+
+* Class 2:
+
+  * Precision: <value>
+  * Recall: <value>
+  * F1 Score: <value>
+
+* Class 3:
+
+  * Precision: <value>
+  * Recall: <value>
+  * F1 Score: <value>
+
+Confusion Matrix:
+
+* Saved to: results/confusion_matrices/transformer_classifier_confusion_matrix.png
+
+7. Problems Faced
+
+* Dataset loading and version compatibility issues.
+* Preparing tokenized inputs for transformer training.
+* Understanding Trainer configuration and evaluation metrics.
+* Managing training resources on local hardware.
+
+8. What I Learned
+
+* How to fine-tune a pretrained transformer for text classification.
+* How tokenization converts text into model-understandable inputs.
+* How Hugging Face Trainer simplifies training and evaluation.
+* How to compute and interpret classification metrics.
+* How smaller transformer models such as bert-tiny can significantly reduce training time while still achieving useful performance.
+
+9. Conclusion
+   The prajjwal1/bert-tiny model was successfully fine-tuned for the text classification task. The model achieved satisfactory results while requiring fewer computational resources than larger transformer models. The trained model, tokenizer, evaluation metrics, confusion matrix, and training artifacts were successfully saved for future use.
