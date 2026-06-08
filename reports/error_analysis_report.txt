@@ -1,1 +1,44 @@
-# Placeholder — to be completed in a future task.
+================================================================================
+REPORT: MODEL ERROR ANALYSIS (TASK 11)
+================================================================================
+
+PART 1: COMMON ERROR PATTERNS
+Based on the diagnostic script executed in the error analysis notebook, the following patterns were observed[cite: 2]:
+
+1. Short Text vs. Long Text
+   * The model did not struggle with short texts; there were 0 errors on texts with 5 or fewer words[cite: 2]. 
+   * However, long texts were a significant source of mistakes, with 25 errors occurring on texts containing 100 or more words[cite: 2].
+
+2. Ambiguous Text
+   * There were 5 examples where the model was highly uncertain (confidence score near 0.50), indicating the text was genuinely ambiguous to the classifier[cite: 2].
+
+3. Rare Words
+   * Vocabulary limitations were not a major factor, as only 2 error examples contained a high ratio (>15%) of rare words[cite: 2].
+
+4. Similar Class Labels
+   * The confusion between classes was nearly symmetrical[cite: 2]. 
+   * The model incorrectly predicted True Label '0' as '1' 23 times[cite: 2].
+   * It incorrectly predicted True Label '1' as '0' 21 times[cite: 2].
+
+5. Insufficient Training Examples (Imbalance)
+   * The training dataset is well-balanced, with Class 0 at 49.1% and Class 1 at 50.9%[cite: 2]. 
+   * The error distribution closely mirrors this (Class 0 at 52.3%, Class 1 at 47.7%), proving that insufficient training examples for a specific class is not the cause of these errors[cite: 2].
+
+PART 2: BASELINE VS. TRANSFORMER COMPARISON
+A comparison between the DistilBERT transformer and the classical Logistic Regression baseline yielded the following results:
+
+1. Total Error Counts:
+   * Transformer Errors: 44[cite: 2].
+   * Baseline (Logistic Regression) Errors: 25[cite: 2].
+
+2. The "Hard" Examples (Misclassified by BOTH):
+   * By cross-referencing the top 20 most confident incorrect predictions from both models, we can see they failed on several of the exact same texts[cite: 2].
+   * Both models misclassified the text starting with: "new email yo bro . this is my new email addres..."[cite: 2].
+   * Both models misclassified the text starting with: "get a $ 25 certificate just for responding to ..."[cite: 2].
+   * Both models misclassified the text starting with: "can ' t please everyone thought you might enjo..."[cite: 2].
+   * Both models misclassified the text starting with: "mirant and koch arent selling physical"[cite: 2].
+   * Both models misclassified the text starting with: "i ' m out bill - i ' m in copenhagen awaiting ..."[cite: 2].
+
+CONCLUSION:
+The Transformer model made more overall errors (44) than the classical baseline (25)[cite: 2]. Furthermore, the overlapping failures on the exact same examples suggest that a subset of this test data is inherently difficult or potentially mislabeled[cite: 2]. The primary driver of the Transformer's errors appears to be the length of the text (>= 100 words) rather than rare vocabulary or class imbalance[cite: 2].
+================================================================================

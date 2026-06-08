@@ -1,0 +1,5 @@
+Model,Accuracy,Macro Precision,Macro Recall,Macro F1,Weighted F1,Training Time (s),Approx Model Size (MB)
+Logistic Regression,0.9121,0.9119,0.9121,0.9119,0.9119,N/A,N/A
+Linear SVM,0.9103,0.9101,0.9103,0.9101,0.9101,N/A,N/A
+Random Forest,0.8925,0.8921,0.8925,0.892,0.892,N/A,N/A
+Fine-Tuned Transformer,0.9805,0.9805,0.9805,0.9805,0.9805,835.14,18-20

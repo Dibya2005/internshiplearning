@@ -1,1 +1,113 @@
-# Placeholder — to be completed in a future task.
+EXECUTIVE SUMMARY
+
+This report compares model performance between Dataset 1 (Enron Spam, Binary)
+and Dataset 2 (AG News, 4-Class).
+
+• Classical baselines achieved approximately 91% accuracy on AG News.
+• Transformer (BERT-tiny) achieved 91.42% accuracy on AG News.
+• The best-performing model on AG News was BERT-tiny, although the margin
+over Linear SVM was very small.
+• The experiment demonstrates that both classical machine learning and
+transformer-based approaches can perform competitively on news
+classification tasks.
+
+DATASET 2: AG NEWS PROFILE
+
+• Task: Multi-class Text Classification
+• Classes: 4 (World, Sports, Business, Sci/Tech)
+• Size: ~120,000 training samples | ~7,600 test samples
+• Text Type: News headlines and article descriptions
+
+PERFORMANCE RESULTS (AG NEWS)
+
+Classical Baselines (TF-IDF Features)
+
+• Logistic Regression
+
+Accuracy: 91.13%
+Macro F1: 91.11%
+
+• Linear SVM
+
+Accuracy: 91.22%
+Macro F1: 91.21%
+Best Classical Model
+
+• Random Forest
+
+Accuracy: 89.21%
+Macro F1: 89.16%
+
+Transformer (BERT-tiny)
+
+• Accuracy: 91.42%
+• Parameters: ~4.4 Million
+• Fine-tuned for 3 epochs
+• Best Overall Model
+
+CROSS-DATASET COMPARISON
+Metric	              Dataset 1 (Spam)	Dataset 2 (AG News)
+Task Type	            Binary (2)	Multi-Class (4)
+Best Classical Accuracy	91.21%	91.22%
+Transformer Accuracy	98.05%	91.42%
+Winner       	Transformer	Transformer (Narrow Margin)
+DETAILED CLASSICAL MODEL ANALYSIS
+
+Linear SVM (Best Classical Model)
+
+• Accuracy: 91.22%
+• Macro Precision: 91.21%
+• Macro Recall: 91.22%
+• Macro F1: 91.21%
+
+Class-wise F1 Scores:
+• World: 91.56%
+• Sports: 96.84%
+• Business: 87.65%
+• Sci/Tech: 88.77%
+
+Observations:
+• Sports articles were the easiest to classify.
+• Business and Sci/Tech categories showed the highest confusion.
+• The model maintained balanced performance across all four classes.
+
+KEY INSIGHTS
+
+• News categories contain distinctive vocabulary, making them highly suitable
+for TF-IDF-based approaches.
+
+• Linear SVM and Logistic Regression performed nearly identically, indicating
+that the feature representation was highly effective.
+
+• Random Forest lagged behind linear models, suggesting that sparse TF-IDF
+features are better handled by linear classifiers.
+
+• BERT-tiny slightly outperformed all classical baselines, showing that
+contextual language understanding provided a small but measurable benefit.
+
+• The small performance gap (0.20%) between BERT-tiny and Linear SVM suggests
+that AG News is not a highly complex semantic classification problem.
+
+SAVED ARTIFACTS
+
+• Metrics:
+results/second_dataset_results.csv
+
+• Confusion Matrices:
+results/confusion_matrices/
+
+Logistic_Regression1.png
+Linear_SVM1.png
+Random_Forest1.png
+
+• Fine-Tuned Model:
+models/transformer_classifier_dataset_2/
+
+CONCLUSION
+
+All classical machine learning baselines and the transformer model were
+successfully trained and evaluated on the AG News dataset.
+
+Among the classical approaches, Linear SVM achieved the highest accuracy
+(91.22%), closely followed by Logistic Regression (91.13%). The transformer
+model (BERT-tiny) achieved the best overall performance with 91.42% accuracy.

@@ -1,0 +1,17 @@
+{
+    "Logistic_Regression": {
+        "accuracy": 0.9875,
+        "macro_f1": 0.9874961707022776,
+        "weighted_f1": 0.9874979212383793
+    },
+    "Linear_SVC": {
+        "accuracy": 0.9875,
+        "macro_f1": 0.9874980465697765,
+        "weighted_f1": 0.9874992967651195
+    },
+    "Random_Forest": {
+        "accuracy": 0.981,
+        "macro_f1": 0.9809967884572492,
+        "weighted_f1": 0.9809987647912496
+    }
+}

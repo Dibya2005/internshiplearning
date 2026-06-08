@@ -1,38 +1,43 @@
-# Placeholder — to be completed in a future task.
-Transformer Training Report
+# Transformer Training Report
 
-Project: Text Classification using Transformers
+**Project:** Text Classification using Transformers
 
-1. Model Used
+## 1. Model Used
 
-* Model Name: prajjwal1/bert-tiny
-* Model Type: Lightweight BERT Encoder
-* Framework: Hugging Face Transformers
-* Reason for Selection: Chosen instead of DistilBERT to reduce training time and memory consumption while maintaining good classification performance.
+* **Model Name:** prajjwal1/bert-tiny
+* **Model Type:** Lightweight BERT Encoder
+* **Framework:** Hugging Face Transformers
+* **Reason for Selection:** Chosen instead of DistilBERT to reduce training time and memory consumption while maintaining good classification performance.
 
-2. Dataset Used
+---
 
-* Dataset Location: data/processed_dataset_1
-* Dataset Splits:
+## 2. Dataset Used
 
-  * Train Set: <train_samples>
-  * Validation Set: <validation_samples>
-  * Test Set: <test_samples>
-* Input Column: text
-* Label Column: label
-* Maximum Sequence Length: 128 tokens
+* **Dataset Location:** data/processed_dataset_1
+* **Dataset Splits:**
 
-3. Hyperparameters
+  * Train Set: 28,544 samples
+  * Validation Set: 3,172 samples
+  * Test Set: 2,000 samples
+* **Input Column:** text
+* **Label Column:** label
+* **Maximum Sequence Length:** 128 tokens
 
-* Epochs: 3
-* Batch Size: 16
-* Learning Rate: 2e-5
-* Maximum Sequence Length: 128
-* Evaluation Strategy: Epoch
-* Save Strategy: Epoch
-* Best Model Metric: F1 Score
+---
 
-4. Training Process
+## 3. Hyperparameters
+
+* **Epochs:** 3
+* **Batch Size:** 16
+* **Learning Rate:** 2e-5
+* **Maximum Sequence Length:** 128
+* **Evaluation Strategy:** Epoch
+* **Save Strategy:** Epoch
+* **Best Model Metric:** F1 Score
+
+---
+
+## 4. Training Process
 
 * Loaded the preprocessed dataset from disk.
 * Tokenized text data using AutoTokenizer.
@@ -41,65 +46,100 @@ Project: Text Classification using Transformers
 * Evaluated the model after each epoch on the validation dataset.
 * Saved the best-performing checkpoint.
 
-5. Training Time
+### Validation Performance by Epoch
 
-* Total Training Time: <training_time>
-* Hardware Used: <CPU/GPU details>
+| Epoch | Accuracy | Precision | Recall | F1 Score |
+| ----- | -------- | --------- | ------ | -------- |
+| 1     | 97.16%   | 97.16%    | 97.16% | 97.16%   |
+| 2     | 98.01%   | 98.01%    | 98.01% | 98.01%   |
+| 3     | 98.14%   | 98.14%    | 98.14% | 98.14%   |
 
-6. Evaluation Results
+---
 
-Overall Metrics:
+## 5. Training Time
 
-* Accuracy: <accuracy>
-* Macro Precision: <macro_precision>
-* Macro Recall: <macro_recall>
-* Macro F1 Score: <macro_f1>
-* Weighted F1 Score: <weighted_f1>
+* **Total Training Time:** 15 min 33 sec
+* **Hardware Used:** CPU
+* **Training Loss:** 0.1324
 
-Per-Class Metrics:
+---
 
-* Class 0:
+## 6. Evaluation Results
 
-  * Precision: <value>
-  * Recall: <value>
-  * F1 Score: <value>
+### Overall Metrics
 
-* Class 1:
+* **Accuracy:** 97.75%
+* **Macro Precision:** 97.75%
+* **Macro Recall:** 97.75%
+* **Macro F1 Score:** 97.75%
+* **Weighted F1 Score:** 97.75%
 
-  * Precision: <value>
-  * Recall: <value>
-  * F1 Score: <value>
+### Per-Class Metrics
 
-* Class 2:
+#### Class 0 (Ham Email)
 
-  * Precision: <value>
-  * Recall: <value>
-  * F1 Score: <value>
+* Precision: 97.49%
+* Recall: 97.98%
+* F1 Score: 97.74%
 
-* Class 3:
+#### Class 1 (Spam Email)
 
-  * Precision: <value>
-  * Recall: <value>
-  * F1 Score: <value>
+* Precision: 98.01%
+* Recall: 97.52%
+* F1 Score: 97.76%
 
-Confusion Matrix:
+### Confusion Matrix
 
-* Saved to: results/confusion_matrices/transformer_classifier_confusion_matrix.png
+| Actual \ Predicted | Ham | Spam |
+| ------------------ | --- | ---- |
+| Ham                | 972 | 20   |
+| Spam               | 25  | 983  |
 
-7. Problems Faced
+Interpretation:
 
-* Dataset loading and version compatibility issues.
+* Correctly classified Ham emails: 972
+* Correctly classified Spam emails: 983
+* Ham misclassified as Spam: 20
+* Spam misclassified as Ham: 25
+
+### Saved Outputs
+
+* Metrics File:
+  `results/transformer_classifier_results.json`
+
+* Confusion Matrix:
+  `results/confusion_matrices/transformer_classifier_confusion_matrix.png`
+
+* Model Directory:
+  `models/transformer_classifier_dataset_1`
+
+---
+
+## 7. Problems Faced
+
+* Dataset loading and library version compatibility issues.
 * Preparing tokenized inputs for transformer training.
 * Understanding Trainer configuration and evaluation metrics.
-* Managing training resources on local hardware.
+* Managing training on CPU-only hardware.
+* Longer training times compared to classical machine learning models.
 
-8. What I Learned
+---
+
+## 8. What I Learned
 
 * How to fine-tune a pretrained transformer for text classification.
-* How tokenization converts text into model-understandable inputs.
-* How Hugging Face Trainer simplifies training and evaluation.
-* How to compute and interpret classification metrics.
-* How smaller transformer models such as bert-tiny can significantly reduce training time while still achieving useful performance.
+* How tokenization converts raw text into model-understandable numerical representations.
+* How Hugging Face Trainer simplifies model training, validation, and checkpointing.
+* How to compute and interpret classification metrics such as accuracy, precision, recall, and F1-score.
+* How confusion matrices help analyze model errors.
+* How smaller transformer models such as bert-tiny can achieve high performance while reducing computational requirements.
 
-9. Conclusion
-   The prajjwal1/bert-tiny model was successfully fine-tuned for the text classification task. The model achieved satisfactory results while requiring fewer computational resources than larger transformer models. The trained model, tokenizer, evaluation metrics, confusion matrix, and training artifacts were successfully saved for future use.
+---
+
+## 9. Conclusion
+
+The prajjwal1/bert-tiny model was successfully fine-tuned on the Enron Spam Classification dataset. The model achieved an accuracy of 97.75% and a macro F1 score of 97.75% on the test set, demonstrating strong performance in distinguishing spam and ham emails.
+
+The validation performance improved steadily across epochs, indicating successful learning without significant overfitting. Despite being a lightweight transformer with only approximately 4.4 million parameters, bert-tiny delivered excellent classification performance while remaining computationally efficient for CPU-based training.
+
+The trained model, tokenizer, evaluation metrics, confusion matrix, and training artifacts were successfully saved and can be used for future inference and deployment tasks.

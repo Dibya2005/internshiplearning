@@ -1,0 +1,2 @@
+Model,Dataset,Accuracy,Macro_Precision,Macro_Recall,Macro_F1,Weighted_F1
+bert-tiny (Transformer),AG News (4 Classes),0.9142105263157895,0.9142012205343688,0.9142105263157895,0.91404615055775,0.91404615055775
